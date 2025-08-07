@@ -2,6 +2,7 @@
   "name": "projeto-diariooficial_sat",
   "version": "0.1.0",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node --env-file=.env server.js"
@@ -11,8 +12,14 @@
   "license": "MIT",
   "description": "Um projeto desenvolvido pelo Fábio de Jesus e com parceria do Michael. Tendo como objetivo criar a página de Diário Oficial do Município de Santo Antônio do Tauá",
   "dependencies": {
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
     "multer": "^2.0.2"
+  },
+  "devDependencies": {
+    "chalk": "^5.4.1",
+    "log-symbols": "^7.0.1"
   }
 }
