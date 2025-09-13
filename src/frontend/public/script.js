@@ -1,10 +1,17 @@
 // Código Novo (ES6)
 document.addEventListener('DOMContentLoaded', async () => {
-    const pdfListContainer = document.getElementById('pdfList');
-    const backendUrl = 'http://localhost:3000';
+    const pdfListContainer = document.querySelector('#pdfList');
+    pdfListContainer.innerText = 'macumba'
+    const backendUrl = 'http://localhost:3030';
 
     try {
-        const response = await fetch(`${backendUrl}/api/files`);
+        const token = '45cd858b5a3311123e5266810be74890'
+        const response = await fetch(`${backendUrl}/api/files`, {
+            method: "GET",
+            headers: {
+                "authorization": token
+            }
+        });
 
         if (!response.ok) {
             // Se a resposta não for OK (ex: 401, 403, 500), trata como erro.
@@ -23,7 +30,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         files.forEach(filename => {
             const link = document.createElement('a');
             link.href = `${backendUrl}/downloads/${filename}`;
-            link.textContent = filename.replace(/-\d{13}-\d{1,9}/, ''); // Tenta limpar o nome do arquivo
             link.target = '_blank';
             link.download = filename;
             pdfListContainer.appendChild(link);

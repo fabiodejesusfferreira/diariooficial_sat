@@ -26,7 +26,7 @@ app.use(express.json());
 
 // Rotas
 app.use('/api/auth', authRoutes);
-app.use('/api/files', authMiddleware, fileRoutes);
+app.use('/api/files', fileRoutes);
 app.use('/downloads', express.static(path.join(__dirname, 'uploads')));
 
 app.get('/', (req, res) => {

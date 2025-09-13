@@ -1,13 +1,13 @@
 // Código Novo (ES6)
 
 // IIFE (Immediately Invoked Function Expression) com Arrow Function
-(() => {
+/* (() => {
     const token = localStorage.getItem('jwtToken');
     if (!token) {
         alert('Você precisa estar logado para acessar esta página.');
         window.location.href = 'login.html';
     }
-})();
+})(); */
 
 document.getElementById('uploadForm').addEventListener('submit', async (event) => {
     event.preventDefault();
