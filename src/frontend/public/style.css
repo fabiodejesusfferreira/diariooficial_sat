@@ -28,6 +28,7 @@ header ul {
 
 header > nav > ul a {
   color: white;
+  font-weight: 600;
   text-decoration: none;
 }
 
