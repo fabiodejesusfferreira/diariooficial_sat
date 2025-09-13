@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diário Oficial</title>
+    <link
+      rel="shortcut icon"
+      href="assets/documentos.ico"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <img style="width: 250px" src="assets/pmsatlogo.png" alt="" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#historia">História</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#transparencia">Transparência</a></li>
+          <li><a href="#publicacoes">Publicações</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <h1>Diário Oficial do Município</h1>
+    <main>
+      <form id="search-form">
+        <div class="form-group">
+          <label for="keyword">Palavra-chave</label>
+          <input type="text" id="keyword" placeholder="Pesquisa" />
+        </div>
+        <div class="form-group">
+          <label for="start-date">Período (início)</label>
+          <input type="date" id="start-date" />
+        </div>
+        <div class="form-group">
+          <label for="end-date">Período (final)</label>
+          <input type="date" id="end-date" />
+        </div>
+        <div class="form-group">
+          <label for="diary-number">Número do diário</label>
+          <input type="number" id="diary-number" placeholder="0" />
+        </div>
+        <button type="reset" id="btn-reset">
+          <img
+            style="width: 100%; height: 100%"
+            src="assets/filtro (1).png"
+            alt="Apagar Filtro"
+          />
+        </button>
+        <button type="submit" id="btn-submit">
+          <img
+            style="width: 100%; height: 100%"
+            src="assets/lupa-com-marca-de-selecao (1).png"
+            alt="Usar Filtro"
+          />
+        </button>
+      </form>
+      <ul id="listaDosDiarios">
+        <li id="itemDiario">
+          <h2>Diário Nº 1, 02 de Agosto de 2025</h2>
+          <p id="itemData">Data de publicação: 02/08/2025</p>
+          <div id="downloadContainer">
+            <a href="assets/dom_23-07-25-1753825852217-411388297.pdf" target="_blank"><img style="width: 18px; padding: 0px;" src="assets/pdfIcon.png" alt="ícone do PDF"> Baixar arquivo</a>
+            <p id="itemTamanho">900 KB</p>
+          </div>
+        </li>
+        <li id="itemDiario">
+          <h2>Diário Nº 2, 02 de Agosto de 2025</h2>
+          <p id="itemData">Data de publicação: 02/08/2025</p>
+          <div id="downloadContainer">
+            <a href="#"><img style="width: 18px; padding: 0px;" src="assets/pdfIcon.png" alt="ícone do PDF"> Baixar arquivo</a>
+            <p id="itemTamanho">900 KB</p>
+          </div>
+        </li>
+        <li id="itemDiario">
+          <h2>Diário Nº 3, 02 de Agosto de 2025</h2>
+          <p id="itemData">Data de publicação: 02/08/2025</p>
+          <div id="downloadContainer">
+            <a href="#"><img style="width: 18px; padding: 0px;" src="assets/pdfIcon.png" alt="ícone do PDF"> Baixar arquivo</a>
+            <p id="itemTamanho">900 KB</p>
+          </div>
+        </li>
+        <li id="itemDiario">
+          <h2>Diário Nº 4, 02 de Agosto de 2025</h2>
+          <p id="itemData">Data de publicação: 02/08/2025</p>
+          <div id="downloadContainer">
+            <a href="#"><img style="width: 18px; padding: 0px;" src="assets/pdfIcon.png" alt="ícone do PDF"> Baixar arquivo</a>
+            <p id="itemTamanho">900 KB</p>
+          </div>
+        </li>
+        <li id="itemDiario">
+          <h2>Diário Nº 5, 02 de Agosto de 2025</h2>
+          <p id="itemData">Data de publicação: 02/08/2025</p>
+          <div id="downloadContainer">
+            <a href="#"><img style="width: 18px; padding: 0px;" src="assets/pdfIcon.png" alt="ícone do PDF"> Baixar arquivo</a>
+            <p id="itemTamanho">900 KB</p>
+          </div>
+        </li>
+        <li id="itemDiario">
+          <h2>Diário Nº 6, 02 de Agosto de 2025</h2>
+          <p id="itemData">Data de publicação: 02/08/2025</p>
+          <div id="downloadContainer">
+            <a href="#"><img style="width: 18px; padding: 0px;" src="assets/pdfIcon.png" alt="ícone do PDF"> Baixar arquivo</a>
+            <p id="itemTamanho">900 KB</p>
+          </div>
+        </li>
+        <li id="itemDiario">
+          <h2>Diário Nº 7, 02 de Agosto de 2025</h2>
+          <p id="itemData">Data de publicação: 02/08/2025</p>
+          <div id="downloadContainer">
+            <a href="#"><img style="width: 18px; padding: 0px;" src="assets/pdfIcon.png" alt="ícone do PDF"> Baixar arquivo</a>
+            <p id="itemTamanho">900 KB</p>
+          </div>
+        </li>
+        <li id="itemDiario">
+          <h2>Diário Nº 8, 02 de Agosto de 2025</h2>
+          <p id="itemData">Data de publicação: 02/08/2025</p>
+          <div id="downloadContainer">
+            <a href="#"><img style="width: 18px; padding: 0px;" src="assets/pdfIcon.png" alt="ícone do PDF"> Baixar arquivo</a>
+            <p id="itemTamanho">900 KB</p>
+          </div>
+        </li>
+        <li id="itemDiario">
+          <h2>Diário Nº 9, 02 de Agosto de 2025</h2>
+          <p id="itemData">Data de publicação: 02/08/2025</p>
+          <div id="downloadContainer">
+            <a href="#"><img style="width: 18px; padding: 0px;" src="assets/pdfIcon.png" alt="ícone do PDF"> Baixar arquivo</a>
+            <p id="itemTamanho">900 KB</p>
+          </div>
+        </li>
+        <li id="itemDiario">
+          <h2>Diário Nº 10, 02 de Agosto de 2025</h2>
+          <p id="itemData">Data de publicação: 02/08/2025</p>
+          <div id="downloadContainer">
+            <a href="#"><img style="width: 18px; padding: 0px;" src="assets/pdfIcon.png" alt="ícone do PDF"> Baixar arquivo</a>
+            <p id="itemTamanho">900 KB</p>
+          </div>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <div>
+        <img style="width: 250px" src="assets/pmsatlogo.png" alt="" />
+      </div>
+      <article>
+        <p class="tituloFooter">Institucional</p><br>
+        <p>Prefeitura de Santo Antônio do Tauá<br>CNPJ: 05.059.936/0001-01</p>
+      </article>
+      <article>
+        <p class="tituloFooter">Contatos</p><br>
+        <p>+55 (91) 93775-2148<br>prefeiturasat@gmail.com</p>
+      </article>
+      <article>
+        <p class="tituloFooter">Endereço e horário</p><br>
+        <p>Praça Alcides Paranhos, 17 Centro<br>Segunda a sexta, das 7h30 às 13h30</p>
+      </article>
+    </footer>
+    <aside>© 2025 EST MF. Todos os Direitos Reservados.</aside>
+  </body>
+</html>
