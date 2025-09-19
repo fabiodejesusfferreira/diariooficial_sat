@@ -7,7 +7,7 @@ export const database = [
             "formulario",
             "documento"
         ],
-        "pdf": "",
+        "pdf": "src\api\src\pdfs\diario.pdf",
         "size": "900"
     },
     {
