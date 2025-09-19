@@ -8,8 +8,8 @@
 }
 
 :root {
-    --formBordColor: 1px solid rgb(122, 122, 122);
-    --boxShadowForForms: 1px 1px 3px rgba(0, 0, 0, 0.499);
+  --formBordColor: 1px solid rgb(122, 122, 122);
+  --boxShadowForForms: 1px 1px 3px rgba(0, 0, 0, 0.499);
 }
 
 /* HEADER */
@@ -53,9 +53,9 @@ h1 {
 }
 
 main {
-    margin-top: 30px;
-    width: 100%;
-    height: 100%;
+  margin-top: 30px;
+  width: 100%;
+  height: 100%;
 }
 
 #search-form {
@@ -94,65 +94,95 @@ input {
 }
 
 #btn-reset {
-    border: 1px solid black;
-    background: gray;
+  border: 1px solid black;
+  background: gray;
 }
 
 #btn-reset:active {
-    background-color: rgb(89, 89, 89);
-}
-
-#btn-submit {
-    border: 1px solid black;
-    background-color: #4ea3ff;
+  background-color: rgb(89, 89, 89);
 }
 
 #btn-submit:active {
-    background-color: #7fbdff;
+  background-color: #7fbdff;
+}
+
+#noResultContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0px 100px;
+}
+
+#noResultText {
+  margin: 10px 0px;
+  font-weight: 600;
 }
 
 #listaDosDiarios {
-    width: 80%;
-    margin: auto;
+  width: 80%;
+  margin: auto;
 }
 
-#itemDiario {
-    box-shadow: var(--boxShadowForForms);
-    margin: 30px 0px;
-    list-style-type: none;
-    border: var(--formBordColor);
-    width: 100%;
+/* Alterado de #itemDiario para .itemDiario */
+.itemDiario {
+  box-shadow: var(--boxShadowForForms);
+  margin: 30px 0px;
+  list-style-type: none;
+  border: var(--formBordColor);
+  width: 100%;
 }
 
-#itemDiario h2 {
-    padding: 7px;
-    font-size: 1.2em;
-    background-color: lightgray;
+/* Alterado de #itemDiario h2 para .itemDiario h2 */
+.itemDiario h2 {
+  padding: 7px;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que as tags quebrem a linha se não houver espaço */
+  gap: 8px; /* Espaço entre o título e as tags */
 }
 
-#itemData {
-    padding: 7px;
-    border-top: var(--formBordColor);
-    border-bottom: var(--formBordColor);
+/* A "caixinha" da tag */
+.tag-box {
+  display: inline-block;
+  background-color: #145aa5; /* Azul do seu header */
+  color: white;
+  padding: 2px 10px;
+  border-radius: 12px; /* Cantos levemente arredondados */
+  font-size: 0.5em; /* Fonte menor que o título */
+  font-weight: 600;
+  text-transform: capitalize; /* Deixa a primeira letra de cada tag maiúscula */
 }
 
-#downloadContainer {
-    display: flex;
-    justify-content: space-between;
+/* Alterado de #itemData para .itemData */
+.itemData {
+  padding: 7px;
+  border-top: var(--formBordColor);
+  border-bottom: var(--formBordColor);
 }
 
-#downloadContainer p, #downloadContainer a {
-    padding: 5px;
+/* Alterado de #downloadContainer para .downloadContainer */
+.downloadContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
 }
 
-#downloadContainer a {
-    text-decoration: none;
-    color: red;
-    font-weight: bold;
+/* E assim por diante para os filhos de downloadContainer */
+.downloadContainer p,
+.downloadContainer a {
+  padding: 5px;
 }
 
-#downloadContainer a:hover {
-    text-decoration: underline;
+.downloadContainer a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+}
+
+.downloadContainer a:hover {
+  text-decoration: underline;
 }
 
 footer {
@@ -179,7 +209,7 @@ footer p {
 }
 
 aside {
-  font-size: .9em;
+  font-size: 0.9em;
   text-align: center;
   padding: 5px;
   color: white;
