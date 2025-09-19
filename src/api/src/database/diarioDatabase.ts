@@ -8,7 +8,7 @@ export const database = [
             "documento"
         ],
         "pdf": "",
-        "size": ""
+        "size": "900"
     },
     {
         "id": 2,
@@ -18,6 +18,6 @@ export const database = [
             "item"
         ],
         "pdf": "",
-        "size": ""
+        "size": "342"
     }
 ];
