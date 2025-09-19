@@ -1,13 +1,15 @@
-import * as PlayerRepository from "../repositories/diarioRepository";
-import * as httpResponse from "../utils/http-helper";
+import * as diarioRepository from "../repositories/diarioRepository"; // Corrigido
+import * as httpResponse from "../utils/htt-helper"; // Assumindo que este arquivo existe
 
 export const getDiarioService = async () => {
-  const data = await diarioRepository.findAllPlayers();
+  const data = await diarioRepository.findAll(); 
   let response = null;
 
-  data
-    ? (response = await httpResponse.OK(data))
-    : (response = await httpResponse.noContent());
+  if (data) {
+    response = await httpResponse.OK(data);
+  } else {
+    response = await httpResponse.noContent();
+  }
 
   return response;
 };

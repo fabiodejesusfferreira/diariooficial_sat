@@ -1,45 +1,80 @@
-// Código Novo (ES6)
-/* document.addEventListener('DOMContentLoaded', async () => {
-    const pdfListContainer = document.querySelector('#pdfList');
-    pdfListContainer.innerText = 'macumba'
-    const backendUrl = 'http://localhost:3030';
+// Aguarda o carregamento completo do HTML para executar o script
+document.addEventListener('DOMContentLoaded', () => {
+    carregarDiariosDoGithub();
+});
+
+/**
+ * Busca os dados do arquivo diarioDatabase.ts diretamente da API do GitHub
+ * e renderiza a lista na página.
+ */
+async function carregarDiariosDoGithub() {
+    const listaContainer = document.getElementById('listaDosDiarios');
+    listaContainer.innerHTML = '<p>Carregando diários...</p>';
+
+    // URL da API do GitHub para acessar o conteúdo do seu arquivo de database
+    const GITHUB_API_URL = 'https://api.github.com/repos/fabiodejesusfferreira/diariooficial_sat/contents/src/api/src/database/diarioDatabase.ts';
 
     try {
-        const token = '45cd858b5a3311123e5266810be74890'
-        const response = await fetch(`${backendUrl}/api/files`, {
-            method: "GET",
-            headers: {
-                "authorization": token
-            }
-        });
+        const response = await fetch(GITHUB_API_URL);
 
         if (!response.ok) {
-            // Se a resposta não for OK (ex: 401, 403, 500), trata como erro.
-            // Para a página pública, isso pode acontecer se o endpoint for protegido indevidamente.
-            throw new Error(`Erro na rede ou no servidor: ${response.statusText}`);
+            throw new Error(`Não foi possível buscar o arquivo no GitHub: ${response.statusText}`);
         }
-        
-        const files = await response.json();
-        pdfListContainer.innerHTML = '';
 
-        if (files.length === 0) {
-            pdfListContainer.innerHTML = '<p>Nenhum documento disponível no momento.</p>';
+        const fileData = await response.json();
+
+        // 1. Decodificar o conteúdo que vem em Base64
+        // A função atob() é nativa do navegador e decodifica Base64
+        const conteudoDecodificado = atob(fileData.content);
+
+        // 2. Limpar a string para extrair apenas o array JSON
+        const stringJson = conteudoDecodificado
+            .replace('export const database =', '') // Remove a exportação
+            .replace(/;$/, '')                     // Remove o ponto e vírgula do final
+            .trim();                               // Remove espaços em branco
+
+        // 3. Converter a string do JSON para um objeto JavaScript
+        const diarios = JSON.parse(stringJson);
+
+        // Limpa a mensagem de "carregando"
+        listaContainer.innerHTML = '';
+
+        if (diarios.length === 0) {
+            listaContainer.innerHTML = '<p>Nenhum diário encontrado.</p>';
             return;
         }
 
-        files.forEach(filename => {
-            const link = document.createElement('a');
-            link.href = `${backendUrl}/downloads/${filename}`;
-            link.target = '_blank';
-            link.download = filename;
-            pdfListContainer.appendChild(link);
+        // 4. Cria um item na lista para cada diário
+        diarios.forEach(diario => {
+            const itemLi = document.createElement('li');
+            itemLi.id = 'itemDiario'; // Mantendo o ID para aplicar seu CSS
+
+            const dataPublicacao = new Date(diario.date).toLocaleDateString('pt-BR');
+            const titulo = `Diário Nº ${diario.id}, ${new Date(diario.date).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })}`;
+
+            itemLi.innerHTML = `
+                <h2>${titulo}</h2>
+                <p id="itemData">Data de publicação: ${dataPublicacao}</p>
+                <div id="downloadContainer">
+                    <div>
+                        <a href="${diario.pdf || '#'}" target="_blank">
+                            <img style="width: 18px; padding: 0px;" src="assets/pdfIcon.png" alt="ícone do PDF"> Baixar arquivo
+                        </a>
+                        <a id="pdfLink" target="_blank" href="${diario.pdf || '#'}">
+                            <img style="width: 14px; padding: 0px;" id="shareBtn" src="assets/link.png" alt="link">
+                        </a>
+                    </div>
+                    <p id="itemTamanho">${diario.size || 'N/A'}</p>
+                </div>
+            `;
+            listaContainer.appendChild(itemLi);
         });
 
     } catch (error) {
-        pdfListContainer.innerHTML = '<p>Não foi possível carregar a lista de documentos. Tente novamente mais tarde.</p>';
-        console.error('Erro ao buscar arquivos:', error);
+        listaContainer.innerHTML = '<p style="color: red;">Falha ao carregar os diários do GitHub.</p>';
+        console.error('Erro ao buscar diários:', error);
     }
-}); */
+}
 
 const shareButton = document.getElementById("shareBtn");
 const pdfLinkElement = document.getElementById("pdfLink");
