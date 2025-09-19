@@ -20,4 +20,4 @@ export const database = [
         "pdf": "",
         "size": "342"
     }
-];
+]
