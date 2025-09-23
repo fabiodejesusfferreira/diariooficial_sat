@@ -1,0 +1,90 @@
+/* responsive.css */
+
+@media screen and (max-width: 768px) {
+  /* --- AJUSTES NO CABEÇALHO --- */
+  header {
+    flex-direction: row; /* Volta a ser linha */
+    justify-content: space-between; /* Espaço entre logo e menu */
+    align-items: center;
+    padding: 10px 20px;
+    position: relative; /* Necessário para o menu de navegação */
+  }
+
+  /* Mostra o botão hamburger em telas pequenas */
+  .hamburger-menu {
+    display: flex;
+  }
+
+  /* Esconde a navegação principal, que será controlada pelo JavaScript */
+  header > nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Começa logo abaixo do header */
+    left: 0;
+    width: 100%;
+    background-color: #145aa5; /* Mesma cor do header */
+  }
+
+  /* Estilo para quando o menu estiver ativo/visível */
+  header > nav.active {
+    display: flex;
+  }
+
+  header > nav > ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  header > nav > ul li {
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* --- AJUSTES NO TÍTULO PRINCIPAL --- */
+  h1 {
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 1.5em;
+  }
+
+  /* --- AJUSTES NO FORMULÁRIO DE BUSCA --- */
+  #search-form {
+    width: 90%;
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  /* Container para os botões do formulário */
+  .form-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Espaça os botões */
+    gap: 10px;
+  }
+  
+  /* Faz os botões dividirem o espaço */
+  .form-buttons button {
+    flex-grow: 1; /* Permite que os botões cresçam para preencher o espaço */
+    width: 50%;
+  }
+
+  /* --- AJUSTES NA LISTA DE DIÁRIOS E RODAPÉ --- */
+  #listaDosDiarios {
+    width: 90%;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}

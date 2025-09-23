@@ -136,3 +136,43 @@ function renderizarListaDiarios(diarios) {
     listaContainer.appendChild(itemLi);
   });
 }
+
+// --- FUNCIONALIDADE DO MENU HAMBURGER ---
+
+// Garante que o código só rode depois que a página carregar completamente.
+document.addEventListener("DOMContentLoaded", () => {
+  // Pega os elementos do menu e do botão pela ID que definimos no HTML.
+  const hamburger = document.getElementById("hamburger-menu");
+  const nav = document.getElementById("main-nav");
+
+  // Adiciona um "ouvinte" que espera por um clique no botão hamburger.
+  hamburger.addEventListener("click", () => {
+    // A cada clique, ele adiciona ou remove a classe 'active' do menu de navegação.
+    // O CSS que escrevemos em 'responsive.css' cuida de mostrar ou esconder o menu
+    // com base na presença dessa classe.
+    nav.classList.toggle("active");
+  });
+  
+  // O código de busca e filtro que já existia continua aqui...
+  inicializar();
+  const form = document.getElementById("search-form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    aplicarFiltros();
+  });
+  const resetButton = document.getElementById("btn-reset");
+  resetButton.addEventListener("click", () => {
+    form.reset();
+    renderizarListaDiarios(todosOsDiarios);
+  });
+});
+
+// A parte abaixo do código já existe no seu arquivo, apenas certifique-se
+// de que a chamada inicializar() e os outros event listeners fiquem dentro do
+// 'DOMContentLoaded' como mostrado acima.
+
+/*
+async function inicializar() { ... }
+function aplicarFiltros() { ... }
+function renderizarListaDiarios(diarios) { ... }
+*/

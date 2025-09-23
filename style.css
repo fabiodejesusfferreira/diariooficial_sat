@@ -219,3 +219,48 @@ aside {
 .tituloFooter {
   font-weight: bold;
 }
+
+/* --- ESTILOS DO MENU HAMBURGER E NAVEGAÇÃO MÓVEL --- */
+
+/* Esconde o botão hamburger em telas de desktop */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.hamburger-menu .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Estilos para os botões de texto do formulário */
+.form-buttons {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+    align-items: flex-end; /* Alinha os botões na parte inferior */
+}
+
+#btn-reset,
+#btn-submit {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+#btn-reset {
+    background-color: #6c757d; /* Cinza */
+    color: white;
+}
+
+#btn-submit {
+    background-color: #007bff; /* Azul */
+    color: white;
+}

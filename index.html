@@ -10,13 +10,19 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
   </head>
   <body>
     <header>
       <div>
-        <img style="width: 250px" src="assets/pmsatlogo.png" alt="" />
+        <img style="width: 250px" src="assets/pmsatlogo.png" alt="Logo da Prefeitura" />
       </div>
-      <nav>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <nav id="main-nav">
         <ul>
           <li><a href="#historia">História</a></li>
           <li><a href="#servicos">Serviços</a></li>
@@ -46,41 +52,37 @@
           <label for="diary-number">Número do diário</label>
           <input type="number" id="diary-number" placeholder="0" />
         </div>
-        <button type="reset" id="btn-reset">
-          <img
-            style="width: 100%; height: 100%"
-            src="assets/filtro (1).png"
-            alt="Apagar Filtro"
-          />
-        </button>
-        <button type="submit" id="btn-submit">
-          <img
-            style="width: 100%; height: 100%"
-            src="assets/lupa-com-marca-de-selecao (1).png"
-            alt="Usar Filtro"
-          />
-        </button>
+        <div class="form-buttons">
+            <button type="reset" id="btn-reset">Limpar</button>
+            <button type="submit" id="btn-submit">Buscar</button>
+        </div>
       </form>
 
-      <ul id="listaDosDiarios">
-      </ul>
-
+      <ul id="listaDosDiarios"></ul>
     </main>
     <footer>
       <div>
         <img style="width: 250px" src="assets/pmsatlogo.png" alt="" />
       </div>
       <article>
-        <p class="tituloFooter">Institucional</p><br>
-        <p>Prefeitura de Santo Antônio do Tauá<br>CNPJ: 05.059.936/0001-01</p>
+        <p class="tituloFooter">Institucional</p>
+        <br />
+        <p>
+          Prefeitura de Santo Antônio do Tauá<br />CNPJ: 05.059.936/0001-01
+        </p>
       </article>
       <article>
-        <p class="tituloFooter">Contatos</p><br>
-        <p>+55 (91) 93775-2148<br>prefeiturasat@gmail.com</p>
+        <p class="tituloFooter">Contatos</p>
+        <br />
+        <p>+55 (91) 93775-2148<br />prefeiturasat@gmail.com</p>
       </article>
       <article>
-        <p class="tituloFooter">Endereço e horário</p><br>
-        <p>Praça Alcides Paranhos, 17 Centro<br>Segunda a sexta, das 7h30 às 13h30</p>
+        <p class="tituloFooter">Endereço e horário</p>
+        <br />
+        <p>
+          Praça Alcides Paranhos, 17 Centro<br />Segunda a sexta, das 7h30 às
+          13h30
+        </p>
       </article>
     </footer>
     <aside>© 2025 EST MF. Todos os Direitos Reservados.</aside>
