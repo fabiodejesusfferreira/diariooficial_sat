@@ -1,5 +1,70 @@
 /* responsive.css */
 
+@media screen and (max-width: 1180px) {
+  /* --- AJUSTES NO CABEÇALHO --- */
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .itemDiario h2 {
+    font-size: 1rem;
+  }
+
+  .itemData {
+    font-size: 1rem;
+  }
+
+  header > nav > ul {
+    padding: 0;
+  }
+
+  header > nav > ul li {
+    padding: 10px 20px;
+  }
+
+  /* --- AJUSTES NO TÍTULO PRINCIPAL --- */
+  h1 {
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 1.6em;
+  }
+
+  /* --- AJUSTES NO FORMULÁRIO DE BUSCA --- */
+  #search-form {
+    width: 90%;
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  /* Container para os botões do formulário */
+  .form-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Espaça os botões */
+    gap: 10px;
+  }
+  
+  /* Faz os botões dividirem o espaço */
+  .form-buttons button {
+    flex-grow: 1; /* Permite que os botões cresçam para preencher o espaço */
+    width: 50%;
+  }
+
+  /* --- AJUSTES NA LISTA DE DIÁRIOS E RODAPÉ --- */
+  #listaDosDiarios {
+    width: 90%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   /* --- AJUSTES NO CABEÇALHO --- */
   header {
@@ -8,6 +73,14 @@
     align-items: center;
     padding: 10px 20px;
     position: relative; /* Necessário para o menu de navegação */
+  }
+
+  .itemDiario h2 {
+    font-size: .9rem;
+  }
+
+  .itemData {
+    font-size: .9rem;
   }
 
   /* Mostra o botão hamburger em telas pequenas */
@@ -88,3 +161,4 @@
     text-align: center;
   }
 }
+
